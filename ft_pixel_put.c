@@ -40,47 +40,12 @@ void	ft_pixel_put(t_mlx *mlx, int x, int y, int color)
 	int r;
 	int	g;
 	int	b;
-	// mlx->inten = 1;
-
-	int fig[3];
-	int res[3];
-	double light;
 
 	r = (color & 0xff);
 	g = ((color >> 8) & 0xff);
 	b = ((color >> 16) & 0xff);
 
-	if (mlx->inten > 1)
-		mlx->inten = 1;
-	else if (mlx->inten < 0)
-		mlx->inten = 0;
-
-	light = mlx->inten;
-
-	// if (light > 0)
-	// 	printf("%#x\n", light);
-
-int rr = r * light;
-int gg = g * light;
-int bb = b * light;
-
-	if (rr > 255)
-		rr = 255;
-	else if (gg > 255)
-		gg = 255;
-	else if (bb > 255)
-		bb = 255;
-
-	if (rr < 0)
-		rr = 0;
-	else if (gg < 0)
-		gg = 0;
-	else if (bb < 0)
-		bb = 0;
-
-	mlx->addr[y * mlx->size_line + 4 * x] = rr;
-	mlx->addr[y * mlx->size_line + 4 * x + 1] = gg;
-	mlx->addr[y * mlx->size_line + 4 * x + 2] = bb;
-
-	// printf("%f | %f | %f\n", (color & 0xff) * mlx->inten, ((color >> 8) & 0xff) * mlx->inten, ((color >> 16) & 0xff) * mlx->inten);
+	mlx->addr[y * mlx->size_line + 4 * x] = r;
+	mlx->addr[y * mlx->size_line + 4 * x + 1] = g;
+	mlx->addr[y * mlx->size_line + 4 * x + 2] = b;
 }
