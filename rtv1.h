@@ -22,6 +22,8 @@
 
 # include <mlx.h>
 
+#define RAD M_PI / 180
+
 typedef struct	s_light
 {
 	char		*type;
@@ -29,34 +31,56 @@ typedef struct	s_light
 	double		xyz[3];
 }				t_light;
 
-typedef struct	s_direction
+typedef struct	s_cylinder
 {
+	double		r;
 	double		xyz[3];
-}				t_direction;
+	double		v[3];
+	int			color;
+	double		specular;
+}				t_cylinder;
 
-typedef struct	s_cam
+typedef struct	s_cone
 {
+	double		k;
 	double		xyz[3];
-}				t_cam;
+	double		v[3];
+	int			color;
+	double		specular;
+}				t_cone;
 
 typedef struct	s_sphere
 {
-	int			r;
+	double		r;
 	double		xyz[3];
 	int			color;
 	double		specular;
 }				t_sphere;
+
+typedef struct	s_plane
+{
+	double		xyz[3];
+	double		v[3];
+	int			color;
+	double		specular;
+}				t_plane;
+
+typedef struct	s_closest
+{
+	t_sphere	*sphere;
+	t_plane		*plane;
+	t_cylinder	*cylinder;
+	t_cone		*cone;
+	double		t;
+	char		**type;
+	void		**figure;
+}				t_closest;
 
 typedef struct	s_solve
 {
 	double		s1;
 	double		s2;
 }				t_solve;
-
-typedef struct	s_oc
-{
-	double	xyz[3];
-}				t_oc;
 
 typedef struct	s_mlx
 {
@@ -70,13 +94,14 @@ typedef struct	s_mlx
 	int			width;
 	int			height;
 	int			color;
-	double		inten;
+	double		cam[3];
 }				t_mlx;
 
-double			dot_product(double *a, double *b, size_t n);
+double			dot_product(double *a, double *b);
 double			length(double vector[]);
 void			ft_pixel_put(t_mlx *mlx, int x, int y, int color);
-double	ft_light(double *point, double *normal, t_direction *d, int specular);
+double			ft_light(double *point, double *normal, double *d, int specular);
+t_closest		*closest_intersection(double *cam, double *d, double min, int max);
 
 #endif
 
