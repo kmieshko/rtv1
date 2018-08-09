@@ -1,0 +1,15 @@
+Camera
+	Center: 0, 5, -30
+Sphere
+	Radius: 2
+	Center: 0, 0, 2
+	Color: ff0000
+	Specular: 10
+Light
+	Type: ambient
+	Intensity: 0.1
+	Center: -1, 0, 0
+Light
+	Type: point
+	Intensity: 0.9
+	Center: 0, 1, -1

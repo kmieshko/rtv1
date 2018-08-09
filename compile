@@ -1,0 +1,1 @@
+cc -lmlx -framework OpenGL -framework AppKit main.c ft_pixel_put.c ft_light.c libft/libft.a ft_read_scene.c ft_create_sphere.c ft_create_plane.c ft_create_cylinder.c ft_create_cone.c ft_create_light.c ft_create_camera.c 
