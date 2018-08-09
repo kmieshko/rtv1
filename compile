@@ -1,1 +1,0 @@
-cc -lmlx -framework OpenGL -framework AppKit main.c ft_pixel_put.c ft_light.c libft/libft.a
