@@ -12,33 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_word(char const *str, char c)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] != c && (str[i + 1] == c || str[i + 1] == '\0'))
-			count++;
-		i++;
-	}
-	return (count);
-}
-
-static int	ft_letter(char const *str, char c)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != c && str[i] != '\0')
-		i++;
-	return (i);
-}
-
-static void	*ft_ret_null(char **arr, int j)
+static void		*ft_ret_null(char **arr, int j)
 {
 	while (j > 0)
 	{
@@ -49,30 +23,65 @@ static void	*ft_ret_null(char **arr, int j)
 	return (NULL);
 }
 
-char		**ft_strsplit(char const *s, char c)
+static int		ft_count_word(const char *str, char c)
 {
-	t_iterators	iter;
-	char		**arr;
+	int		count;
+	int		flag;
+	int		i;
 
-	iter.i = 0;
-	iter.j = 0;
-	if (!s || !(arr = (char **)malloc(sizeof(char *) * ft_word(s, c) + 1)))
-		return (NULL);
-	while (s[iter.i] != '\0')
+	flag = 0;
+	count = 0;
+	i = 0;
+	while (str[i] != '\0')
 	{
-		iter.k = 0;
-		while (s[iter.i] == c && s[iter.i] != '\0')
-			iter.i++;
-		if (s[iter.i] != '\0')
+		if (flag == 1 && str[i] == c)
+			flag = 0;
+		if (flag == 0 && str[i] != c)
 		{
-			if (!(arr[iter.j] =
-				(char *)malloc(sizeof(char) * ft_letter(s, c) + 1)))
-				return (ft_ret_null(arr, iter.j));
-			while (s[iter.i] != '\0' && s[iter.i] != c)
-				arr[iter.j][iter.k++] = s[iter.i++];
-			arr[iter.j++][iter.k] = '\0';
+			flag = 1;
+			count++;
 		}
+		i++;
 	}
-	arr[iter.j] = NULL;
+	return (count);
+}
+
+static int		ft_word_length(const char *str, char c)
+{
+	int		len;
+	int		i;
+
+	len = 0;
+	i = 0;
+	while (str[i] != c && str[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+	return (len);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char	**arr;
+	int		nb_word;
+	int		i;
+
+	i = 0;
+	nb_word = ft_count_word(s, c);
+	if (!s || !(arr = (char **)malloc(sizeof(char *) *
+		ft_count_word(s, c) + 1)))
+		return (NULL);
+	while (nb_word--)
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		arr[i] = ft_strsub(s, 0, ft_word_length(s, c));
+		if (arr[i] == NULL)
+			return (ft_ret_null(arr, i));
+		s = s + ft_word_length(s, c);
+		i++;
+	}
+	arr[i] = NULL;
 	return (arr);
 }

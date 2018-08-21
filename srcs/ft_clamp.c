@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_clamp.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmieshko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/01 12:13:04 by kmieshko          #+#    #+#             */
-/*   Updated: 2017/11/01 12:13:05 by kmieshko         ###   ########.fr       */
+/*   Created: 2018/08/14 16:40:52 by kmieshko          #+#    #+#             */
+/*   Updated: 2018/08/14 16:40:53 by kmieshko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "rtv1.h"
 
-void	ft_strdel(char **as)
+static int	if_min(int a, int b)
 {
-	if (!as || !*as)
-		return ;
-	free(*as);
-	*as = NULL;
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+static int	if_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+int			clamp(int color)
+{
+	int res;
+
+	res = if_min(255, if_max(0, color));
+	return (res);
 }

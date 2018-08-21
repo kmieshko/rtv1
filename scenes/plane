@@ -1,0 +1,37 @@
+Camera
+	Center: 0, 0, -10
+Light
+	Type: ambient
+	Intensity: 0.1
+	Center: 0, 0, 0
+Rotation
+	Angle: 0, 0, 0
+Light
+	Type: point
+	Intensity: 0.9
+	Center: 0, 0, 1
+Plane
+	Center: 0, -2, 0
+	Vector: 0, 1, 0
+	Color: B0C4DE
+	Specular: 0
+Plane
+	Center: 0, 2, 0
+	Vector: 0, 1, 0
+	Color: B0E0E6
+	Specular: 0
+Plane
+	Center: 2, 0, 0
+	Vector: 1, 0, 0
+	Color: ADD8E6
+	Specular: 0
+Plane
+	Center: -2, 0, 0
+	Vector: 1, 0, 0
+	Color: 87CEEB
+	Specular: 0
+Plane
+	Center: 0, 0, 2
+	Vector: 0, 0, 1
+	Color: B0C4DE
+	Specular: 0

@@ -1,0 +1,18 @@
+Camera
+	Center: 0, 0, -10
+Light
+	Type: ambient
+	Intensity: 0.3
+	Center: 0, 0, 0
+Rotation
+	Angle: 0, 0, 0
+Light
+	Type: point
+	Intensity: 0.7
+	Center: -3, 2, 2
+Cone
+	Tangle: 15
+	Center: 0, 0, 4
+	Specular: 20
+	Color: 8F00FF
+	Vector: 0, 1, 0

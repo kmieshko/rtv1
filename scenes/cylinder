@@ -1,0 +1,18 @@
+Camera
+	Center: 0, 0, -20
+Light
+	Type: ambient
+	Intensity: 0.3
+	Center: 0, 0, 0
+Rotation
+	Angle: 0, 0, 0
+Light
+	Type: point
+	Intensity: 0.7
+	Center: -2, 0, 0
+Cylinder
+	RADIUS: 1
+	Center: 0, 0, 2
+	Specular: 200
+	Color: 4553C1
+	Vector: -1, 1, 0

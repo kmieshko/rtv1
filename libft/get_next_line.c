@@ -98,15 +98,11 @@ static char		*fill_line(t_gnl **gnl, int fd, char *buf)
 	return (str);
 }
 
-static	int		ft_main_condition(int fd, char **line, char *buf, t_gnl *gnl)
+static int		ft_main_condition(char *buf)
 {
-	if (!gnl)
-		if (!(gnl = create_gnl(&gnl, fd, buf)))
-			return (-1);
-	if ((*line = fill_line(&gnl, fd, buf)) != NULL)
-		return (1);
-	ft_strdel(&buf);
-	return (0);
+	if (buf != NULL)
+		ft_strdel(&buf);
+	return (-1);
 }
 
 int				get_next_line(int fd, char **line)
@@ -118,11 +114,7 @@ int				get_next_line(int fd, char **line)
 	buf = NULL;
 	if (fd < 0 || !line || BUFF_SIZE < 1 || !(buf = ft_strnew(BUFF_SIZE)) ||
 		read(fd, buf, 0) < 0)
-	{
-		if (buf != NULL)
-			ft_strdel(&buf);
-		return (-1);
-	}
+		return (ft_main_condition(buf));
 	while ((i = read(fd, buf, BUFF_SIZE)) != 0)
 	{
 		buf[i] = '\0';
@@ -132,5 +124,11 @@ int				get_next_line(int fd, char **line)
 			if ((*line = fill_line(&gnl, fd, buf)) != NULL)
 				return (1);
 	}
-	return (ft_main_condition(fd, line, buf, gnl));
+	if (!gnl)
+		if (!(gnl = create_gnl(&gnl, fd, buf)))
+			return (-1);
+	if ((*line = fill_line(&gnl, fd, buf)) != NULL)
+		return (1);
+	ft_strdel(&buf);
+	return (0);
 }

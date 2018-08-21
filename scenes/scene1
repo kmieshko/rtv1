@@ -1,0 +1,28 @@
+Rotation
+	Angle: 30, 0, 15
+Camera
+	Center: 0, 15, -15
+Light
+	Type: ambient
+	Intensity: 0.4
+	Center: 0, 0, 0
+Plane
+	Center: 0, 0, 10
+	Vector: 0, 0, 1
+	Color: 0f0f0f0
+	Specular: 1
+Cylinder
+	Radius: 1
+	Center: 0, 0, 3
+	Vector: 0, -1, 0
+	Color: 00ffff
+	Specular: 100
+Plane
+	Center: 0, 0, 0
+	Vector: 0, 1, 0
+	Color: ffff00
+	Specular: 1
+Light
+	Type: point
+	Intensity: 0.6
+	Center: 0, 3, 1

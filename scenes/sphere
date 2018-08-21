@@ -1,0 +1,17 @@
+Camera
+	Center: 0, 0, -10
+Rotation
+	Angle: 0, 0, 0
+Sphere
+	Radius: 2
+	Center: 0, 0, 10
+	Color: 4b7263
+	Specular: 0
+Light
+	Type: ambient
+	Intensity: 0.2
+	Center: -1, 0, 0
+Light
+	Type: point
+	Intensity: 0.8
+	Center: 0, 10, -1

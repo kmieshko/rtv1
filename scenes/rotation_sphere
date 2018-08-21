@@ -1,0 +1,62 @@
+Rotation
+	Angle: 0, -45, 0
+Camera
+	Center: 30, 0, -30
+Light
+	Type: ambient
+	Intensity: 0.1
+	Center: 0, 0, 0
+Light
+	Type: point
+	Intensity: 0.15
+	Center: 0, 0, 1
+Light
+	Type: point
+	Intensity: 0.15
+	Center: 0, 0, -1
+Light
+	Type: point
+	Intensity: 0.15
+	Center: 1, 0, 0
+Light
+	Type: point
+	Intensity: 0.15
+	Center: -1, 0, 0
+Light
+	Type: point
+	Intensity: 0.15
+	Center: 0, 1, 0
+Light
+	Type: point
+	Intensity: 0.15
+	Center: 0, -1, 0
+Sphere
+	Radius: 1
+	Center: 5, 0, 0
+	Color: 00ff00
+	Specular: 100
+Sphere
+	Radius: 1
+	Center: -5, 0, 0
+	Color: ff0000
+	Specular: 100
+Sphere
+	Radius: 1
+	Center: 0, 5, 0
+	Color: ffff00
+	Specular: 100
+Sphere
+	Radius: 1
+	Center: 0, -5, 0
+	Color: 0000ff
+	Specular: 100
+Sphere
+	Radius: 1
+	Center: 0, 0, 5
+	Color: ff7f00
+	Specular: 100
+Sphere
+	Radius: 1
+	Center: 0, 0, -5
+	Color: 9400d5
+	Specular: 100

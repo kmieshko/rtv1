@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_vector_operations.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmieshko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/01 12:13:04 by kmieshko          #+#    #+#             */
-/*   Updated: 2017/11/01 12:13:05 by kmieshko         ###   ########.fr       */
+/*   Created: 2018/08/13 17:50:02 by kmieshko          #+#    #+#             */
+/*   Updated: 2018/08/13 17:50:03 by kmieshko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "rtv1.h"
 
-void	ft_strdel(char **as)
+double		dot_product(double *a, double *b)
 {
-	if (!as || !*as)
-		return ;
-	free(*as);
-	*as = NULL;
+	double	sum;
+	size_t	i;
+
+	i = 0;
+	sum = 0;
+	while (i < 3)
+	{
+		sum += a[i] * b[i];
+		i++;
+	}
+	return (sum);
+}
+
+double		length(double *vector)
+{
+	double	length;
+
+	length = sqrt(dot_product(vector, vector));
+	return (length);
 }
