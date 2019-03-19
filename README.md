@@ -58,6 +58,14 @@ Cone
 
 # Some examples
 
+![1](https://github.com/kmieshko/rtv1/blob/master/examples/1.png)
+
+![2](https://github.com/kmieshko/rtv1/blob/master/examples/2.png)
+
+![3](https://github.com/kmieshko/rtv1/blob/master/examples/3.png)
+
+![4](https://github.com/kmieshko/rtv1/blob/master/examples/4.png)
+
 # Disclaimer
 
 This project is written according to 42's "The Norm" which specifies special rules for code like less then 25 lines in each function, 85 symbols in line, forbidden most of libraries and functions that wasn't written by you, also "for", "switch case" and others are forbidden (you can read more at https://ncoden.fr/datas/42/norm.pdf)
