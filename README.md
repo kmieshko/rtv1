@@ -58,13 +58,12 @@ Cone
 
 # Some examples
 
-![1](https://github.com/kmieshko/rtv1/blob/master/examples/1.png)
-
-![2](https://github.com/kmieshko/rtv1/blob/master/examples/2.png)
-
-![3](https://github.com/kmieshko/rtv1/blob/master/examples/3.png)
-
-![4](https://github.com/kmieshko/rtv1/blob/master/examples/4.png)
+<p align="center">
+<img src="https://github.com/kmieshko/rtv1/blob/master/examples/1.png" width=600>
+<img src="https://github.com/kmieshko/rtv1/blob/master/examples/2.png" width=600>
+<img src="https://github.com/kmieshko/rtv1/blob/master/examples/3.png" width=600>
+<img src="https://github.com/kmieshko/rtv1/blob/master/examples/4.png" width=600>
+</p>
 
 # Disclaimer
 
